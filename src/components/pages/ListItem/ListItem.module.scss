@@ -1,0 +1,57 @@
+@import 'styles/__variables';
+
+.ListItem {
+	border: .0625rem solid $border-color;
+	margin: -.0625rem -.03125rem 0;
+	padding: 1.5rem 1.5rem 2rem;
+
+	&__link {
+		color: $default-text-color;
+		&:hover {
+			color: $default-text-color;
+			text-decoration: none;
+		}
+	}
+
+	&__caption {
+		margin-top: 1.2rem;
+	}
+
+	&__title {
+		position: relative;
+		font-size: 1.1rem;
+		line-height: 1.125rem;
+		color: #919191;
+		white-space: nowrap;
+		overflow: hidden;
+		padding-bottom: .5rem;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 3rem;
+			background: linear-gradient(to right, transparent, #fff);
+		}
+	}
+
+	&__price {
+		display: inline-block;
+		font-size: 1.4rem;
+		font-weight: 600;
+		min-height: 1.4rem;
+	}
+
+	&__additional-info {
+		display: flex;
+		margin-top: 1rem;
+		font-weight: 600;
+
+		li + li {
+			margin-left: 3rem;
+		}
+	}
+
+}
