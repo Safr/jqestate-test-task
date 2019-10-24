@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { getImgUrl } from 'lib/helpers';
 import { AreaIcon, HouseIcon } from 'components/UI/Icons';
-import { ListItem } from './ListItem.module.scss';
+import styles from './ListItem.module.scss';
 
 const ListItemContainer = ({ house }) => {
   const {
@@ -17,21 +17,22 @@ const ListItemContainer = ({ house }) => {
     ? `$${saleOffer.multiCurrencyPrice.usd.toLocaleString('ru')}`
     : null;
   return (
-    <figure className={ListItem}>
-      <a href="/" className={ListItem.link}>
-        <div className={ListItem.image}>
-          <img
-            src={getImgUrl(images)}
-            alt={`Фото дома в посёлке «${localityName}»`}
-            className="img-fluid"
-          />
-        </div>
-        <figcaption className={ListItem.caption}>
-          <h4 className={ListItem.title}>
+    <li className={styles.ListItem}>
+      <a href="/" className={styles.ListItem__link}>
+        {getImgUrl(images) && (
+          <div className={styles.ListItem__image}>
+            <img
+              src={getImgUrl(images)}
+              alt={`Изображение дома «${localityName}»`}
+            />
+          </div>
+        )}
+        <figcaption className={styles.ListItem__caption}>
+          <h4 className={styles.ListItem__title}>
             Дом в посёлке «{localityName}», {mkadDistance} км, ID {id}
           </h4>
-          <span className={ListItem.price}>{price}</span>
-          <ul className={ListItem['additional-info']}>
+          <span className={styles.ListItem__price}>{price}</span>
+          <ul className={styles.ListItem__addInfo}>
             <li>
               <AreaIcon />
               {landDetails.area} сот
@@ -43,7 +44,7 @@ const ListItemContainer = ({ house }) => {
           </ul>
         </figcaption>
       </a>
-    </figure>
+    </li>
   );
 };
 

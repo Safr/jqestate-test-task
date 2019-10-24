@@ -1,11 +1,32 @@
 @import 'styles/__variables';
 
 .List {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 40px;
-  @media screen and (max-width: $desktop) { grid-template-columns: repeat(3, 1fr); }
-  // @media screen and (max-width: $laptop) { grid-template-columns: repeat(2, 1fr); }
-  @media screen and (max-width: $tablet) { grid-template-columns: repeat(2, 1fr); }
-  @media screen and (max-width: $phone) { grid-template-columns: repeat(1, 1fr); }
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: $desktop) {
+  .List {
+    justify-content: center;
+    > li {
+      width: 28%;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .List {
+    > li {
+      width: 42%;
+    }
+  }
+}
+
+@media screen and (max-width: $phone) {
+  .List {
+    > li {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
 }

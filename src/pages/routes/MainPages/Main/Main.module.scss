@@ -1,8 +1,19 @@
+@import 'styles/__variables';
+
 .PageWrapper {
   position: relative;
-  max-width: 1280px;
+  width: auto;
   padding: 30px 25px 40px 30px;
-  }
+
+  @media screen and (max-width: $lgdesktop) { max-width: 1680px; }
+
+  @media screen and (max-width: $desktop) { max-width: 1440px; }
+
+  @media screen and (max-width: $tablet) { max-width: 1024px; }
+
+  @media screen and (max-width: $phone) { max-width: 768px; }
+
+}
 
 .Loading {
   display: grid;

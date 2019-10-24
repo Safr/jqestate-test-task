@@ -13,8 +13,7 @@
 .Grid {
   position: relative;
   flex: 1;
-  display: grid;
-  grid-template-columns: fit-content(100%);
+  width: 100%;
   margin-top: 20px;
 }
 

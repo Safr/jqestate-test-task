@@ -22,9 +22,9 @@ const MainPage = ({ estates, fetchEstates, isLoading, page }) => {
     <div className={PageWrapper}>
       {estates && <List items={estates.items || []} />}
       {isLoading && (
-        <Loading>
+        <div className={Loading}>
           <Spinner />
-        </Loading>
+        </div>
       )}
     </div>
   );

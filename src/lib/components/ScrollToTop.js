@@ -1,6 +1,5 @@
 import React from 'react';
-import { RouteComponentProps, withRouter } from 'react-router';
-import { Location } from 'history';
+import { withRouter } from 'react-router';
 // HOOKS
 import { usePrevious } from 'lib/hooks';
 

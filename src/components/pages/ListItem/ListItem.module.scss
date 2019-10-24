@@ -1,9 +1,16 @@
 @import 'styles/__variables';
 
 .ListItem {
-	border: .0625rem solid $border-color;
-	margin: -.0625rem -.03125rem 0;
-	padding: 1.5rem 1.5rem 2rem;
+  width: 17%;
+  list-style-type: none;
+  border: .0625rem solid $border-color;
+  padding: 15px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-right: 0
+  }
 
 	&__link {
 		color: $default-text-color;
@@ -44,10 +51,15 @@
 		min-height: 1.4rem;
 	}
 
-	&__additional-info {
+	&__addInfo {
 		display: flex;
 		margin-top: 1rem;
-		font-weight: 600;
+    font-weight: 600;
+
+    li {
+      display: flex;
+      align-items: center;
+    }
 
 		li + li {
 			margin-left: 3rem;
